@@ -9,6 +9,7 @@ Before this I spent two years as a Research Assistant at the Neurocomputation La
 ## What I work on
 
 - **Retrieval and document intelligence** — modular RAG platforms end to end: ingestion, OCR, chunking, hybrid retrieval (dense + BM25 with reciprocal rank fusion), cross-encoder reranking, and grounded answers with citations.
+- **Vision-language retrieval** — natural-language search over video with vision-language models used sparingly: contrastive encoders, LoRA adaptation, learned re-rankers, and VLM verification cascades measured on recall-vs-cost curves.
 - **Agentic systems** — event-driven assistants and multi-step LLM workflows over chat platforms and enterprise data.
 - **Computer vision in production** — pose-keypoint behaviour detection, action recognition, and video analytics across 20+ concurrent RTSP streams.
 
@@ -16,6 +17,7 @@ Before this I spent two years as a Research Assistant at the Neurocomputation La
 
 | Project | What it is | Stack |
 | --- | --- | --- |
+| [semantic-forensic-search](https://github.com/wajahatah/semantic-forensic-search) | Natural-language search over surveillance video ("a person taking a bag from a parked car") that keeps vision-language-model calls to a minimum. SigLIP 2 + LoRA retrieval, a temporal re-ranker, and a VLM verification cascade on MEVA (10,678 activity instances), evaluated on seen and unseen cameras. The zero-VLM cascade lifts Q1 mAP from 0.18 to 0.48; a 32B VLM on the top 10 adds a further +0.065 S@1. | PyTorch · SigLIP 2 · LoRA · Qwen3-VL · Gradio |
 | [ragkit](https://github.com/wajahatah/ragkit) | RAG platform built as a modular monolith: four services that run as one process or four containers by configuration. Hybrid retrieval, cross-encoder reranking, cited answers, and built-in evaluation. | Python · FastAPI · Docker Compose · CI |
 | [docling-custom-ocr](https://github.com/wajahatah/docling-custom-ocr) | Plugs a custom HTTP OCR backend into Docling without forking it, wrapped as a FastAPI chunking service with multiple chunking strategies. | Python · Docling · FastAPI · Docker |
 | [Conversational_Task_Assistant](https://github.com/wajahatah/Conversational_Task_Assistant) | Progress-aware task assistant for Telegram and Discord: natural-language task entry, risk-aware nudges as deadlines approach, daily briefings, and pluggable LLM backends (Ollama, Hugging Face, OpenAI, Gemini, Claude). | Python · Docker · LLM APIs |
@@ -43,7 +45,6 @@ Photos and write-ups for all of these are on my [portfolio](https://wajahatah.gi
 
 - MS Artificial Intelligence, NED University — in progress (2026–)
 - BS Applied Physics (Electronics), NED University — Gold Medalist, 2022
-- Google Cloud Associate Cloud Engineer, 2026
 - I supervise undergraduate research projects at the Neurocomputation Lab
 
 Reach me at wajahat.ahmedhashmi@gmail.com.
